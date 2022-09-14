@@ -5,6 +5,14 @@
 //
 // usage: no command line arguments
 // set problem sizes, block sizes in the code below
+/*
+* Name: Sanket Sanjay Naik
+* Date: 09/14/2022
+* Course: CSC 746
+* Assignment: HW2
+* SFSU ID: 922245139
+*/
+
 
 #include <algorithm>
 #include <chrono>
@@ -92,6 +100,8 @@ int main(int argc, char** argv)
 
            // insert timer code here
 
+           std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
+
 #ifdef BLOCKED
            square_dgemm_blocked(n, b, A, B, C); 
 #else
@@ -99,6 +109,11 @@ int main(int argc, char** argv)
 #endif
 
            // insert timer code here
+           std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution_clock::now();
+
+           std::chrono::duration<double> elapsed = end_time - start_time;
+
+           std::cout << " Elapsed time is : " << elapsed.count() << " " << std::endl;
 
            reference_dgemm(n, 1.0 , Acopy, Bcopy, Ccopy);
 

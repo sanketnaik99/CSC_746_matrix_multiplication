@@ -1,3 +1,11 @@
+/*
+* Name: Sanket Sanjay Naik
+* Date: 09/14/2022
+* Course: CSC 746
+* Assignment: HW2
+* SFSU ID: 922245139
+*/
+
 #include <cblas.h>
 
 const char* dgemm_desc = "Reference dgemm.";

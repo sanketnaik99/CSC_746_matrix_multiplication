@@ -1,3 +1,13 @@
+/*
+* Name: Sanket Sanjay Naik
+* Date: 09/14/2022
+* Course: CSC 746
+* Assignment: HW2
+* SFSU ID: 922245139
+*/
+
+#include<iostream>
+
 const char* dgemm_desc = "Blocked dgemm.";
 
 /* This routine performs a dgemm operation
@@ -6,5 +16,19 @@ const char* dgemm_desc = "Blocked dgemm.";
  * On exit, A and B maintain their input values. */
 void square_dgemm_blocked(int n, int block_size, double* A, double* B, double* C) 
 {
-   // insert your code here
+   for (int i = 0; i < n; i += block_size){
+      for (int j = 0; j < n; j += block_size){
+         for (int k = 0; k < n; k += block_size){
+            
+            // mmul on blocks
+            for (int a = i; a < i + block_size; a++){
+               for (int b = j; b < j + block_size; b++){
+                  for (int c = k; c < k + block_size; c++){
+                     C[a + b*n] += A[a + c*n] * B[c + b*n];
+                  }
+               }
+            }
+         }
+      }
+   }
 }
