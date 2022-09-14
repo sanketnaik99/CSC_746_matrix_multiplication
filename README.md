@@ -58,6 +58,12 @@ For blocked matrix multiply, in this implementation, the block size is being pas
 a parameter from the main benchmark.cpp code. You should write your blocked matrix multiply
 with the block size parameterized in this fashion (rather than being a hard-coded thing). 
 
+# Change Compiler
+
+```bash
+module swap PrgEnv-intel PrgEnv-gnu
+```
+
 # Results
 
 ## Basic
@@ -67,15 +73,15 @@ snaik@nid02389:~/CSC_746/CSC_746_matrix_multiplication/build> ./job-basic
 Description:	Basic implementation, three-loop dgemm.
 
 Working on problem size N=64 
- Elapsed time is : 0.00 
+ Elapsed time is : 0.00115869 
 Working on problem size N=128 
- Elapsed time is : 0.01 
+ Elapsed time is : 0.008955861 
 Working on problem size N=256 
- Elapsed time is : 0.22 
+ Elapsed time is : 0.22016617 
 Working on problem size N=512 
- Elapsed time is : 3.34 
+ Elapsed time is : 3.3394448 
 Working on problem size N=1024 
- Elapsed time is : 27.01 
+ Elapsed time is : 26.999219
 snaik@nid02389:~/CSC_746/CSC_746_matrix_multiplication/build> 
 ```
 
@@ -89,53 +95,53 @@ Description:	Blocked dgemm.
 Working on problem size N=64 
 Blocked DGEMM 
 Block Size = 2
- Elapsed time is : 0.00 
+ Elapsed time is : 0.00277534 
 Block Size = 16
- Elapsed time is : 0.00 
+ Elapsed time is : 0.001349854 
 Block Size = 32
- Elapsed time is : 0.00 
+ Elapsed time is : 0.001272403 
 Block Size = 64
- Elapsed time is : 0.00 
+ Elapsed time is : 0.001157903 
 Working on problem size N=128 
 Blocked DGEMM 
 Block Size = 2
- Elapsed time is : 0.02 
+ Elapsed time is : 0.020037593 
 Block Size = 16
- Elapsed time is : 0.01 
+ Elapsed time is : 0.01121086 
 Block Size = 32
- Elapsed time is : 0.01 
+ Elapsed time is : 0.010172257 
 Block Size = 64
- Elapsed time is : 0.01 
+ Elapsed time is : 0.009376075 
 Working on problem size N=256 
 Blocked DGEMM 
 Block Size = 2
- Elapsed time is : 0.17 
+ Elapsed time is : 0.17426355 
 Block Size = 16
- Elapsed time is : 0.16 
+ Elapsed time is : 0.16329602 
 Block Size = 32
- Elapsed time is : 0.19 
+ Elapsed time is : 0.19307886 
 Block Size = 64
- Elapsed time is : 0.23 
+ Elapsed time is : 0.23185196 
 Working on problem size N=512 
 Blocked DGEMM 
 Block Size = 2
- Elapsed time is : 3.83 
+ Elapsed time is : 3.8304571 
 Block Size = 16
- Elapsed time is : 2.34 
+ Elapsed time is : 2.3440677 
 Block Size = 32
- Elapsed time is : 2.40 
+ Elapsed time is : 2.4047413 
 Block Size = 64
- Elapsed time is : 2.36 
+ Elapsed time is : 2.3626293 
 Working on problem size N=1024 
 Blocked DGEMM 
 Block Size = 2
- Elapsed time is : 31.22 
+ Elapsed time is : 31.225872 
 Block Size = 16
- Elapsed time is : 18.55 
+ Elapsed time is : 18.540552 
 Block Size = 32
- Elapsed time is : 18.30 
+ Elapsed time is : 18.302096 
 Block Size = 64
- Elapsed time is : 18.35 
+ Elapsed time is : 18.361508 
 ```
 
 ## BLAS
@@ -146,13 +152,13 @@ snaik@nid02389:~/CSC_746/CSC_746_matrix_multiplication/build> ./job-blas
 Description:	Reference dgemm.
 
 Working on problem size N=64 
- Elapsed time is : 0.01 
+ Elapsed time is : 0.00480609 
 Working on problem size N=128 
- Elapsed time is : 0.00 
+ Elapsed time is : 0.000619282 
 Working on problem size N=256 
- Elapsed time is : 0.00 
+ Elapsed time is : 0.002337916 
 Working on problem size N=512 
- Elapsed time is : 0.01 
+ Elapsed time is : 0.012685684 
 Working on problem size N=1024 
- Elapsed time is : 0.08 
+ Elapsed time is : 0.079609563 
 ```
