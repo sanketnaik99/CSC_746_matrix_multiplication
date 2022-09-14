@@ -112,6 +112,9 @@ int main(int argc, char** argv)
            std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution_clock::now();
 
            std::chrono::duration<double> elapsed = end_time - start_time;
+#ifdef BLOCKED
+           std::cout << "Block Size = " << b << std::endl;
+#endif
 
            std::cout << " Elapsed time is : " << elapsed.count() << " " << std::endl;
 
