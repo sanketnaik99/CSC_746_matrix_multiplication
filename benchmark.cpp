@@ -116,7 +116,7 @@ int main(int argc, char** argv)
            std::cout << "Block Size = " << b << std::endl;
 #endif
 
-           std::cout << " Elapsed time is : " << elapsed.count() << " " << std::endl;
+           std::cout << " Elapsed time is : " << elapsed.count() << std::setprecision(8) << " " << std::endl;
 
            reference_dgemm(n, 1.0 , Acopy, Bcopy, Ccopy);
 
